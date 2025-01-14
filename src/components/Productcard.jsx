@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 function Productcard({item}){
     const addToCart=(productName)=>{
@@ -13,7 +14,7 @@ function Productcard({item}){
         <Card.Text>
           {item?.description.slice(0,30)}
         </Card.Text>
-        <Button variant="primary" onClick={()=>addToCart(item.title.slice(0,20))}>Add to Cart</Button>
+        <Link to={`productdetails/${item.id}`}><Button variant="primary" >View Product</Button></Link>
       </Card.Body>
     </Card>
     )
